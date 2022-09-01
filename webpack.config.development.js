@@ -20,8 +20,7 @@ module.exports = (env, options) => {
                 {
                     test: /\.scss$/,
                     use: [
-                        "style-loader",
-                        // MiniCssExtractPlugin.loader,
+                        MiniCssExtractPlugin.loader,
                         "@teamsupercell/typings-for-css-modules-loader",
                         {
                             loader: "css-loader",
@@ -86,7 +85,10 @@ module.exports = (env, options) => {
                 minify: false
             }),
             new CopyPlugin(copyPluginPatterns),
-            new MiniCssExtractPlugin(),
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash].css',
+                chunkFilename: 'css/[id].[contenthash].css'
+            }),
         ]
     };
 };

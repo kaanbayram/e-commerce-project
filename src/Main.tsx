@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { locals } from './assets/stylesheets/main.scss'
+import * as Styles from './assets/stylesheets/main.scss'
 
 export class Main extends Component<any, any>
 {
@@ -10,7 +10,9 @@ export class Main extends Component<any, any>
     render() {
         return (
             <>
-                
+                <div className={Styles.mainStyles}>
+                    
+                </div>
             </>
         );
     }

@@ -1,6 +1,10 @@
 declare namespace MainScssNamespace {
   export interface IMainScss {
+    "font-bold": string;
     mainStyles: string;
+    "text-2xl": string;
+    "text-7xl": string;
+    underline: string;
   }
 }
 

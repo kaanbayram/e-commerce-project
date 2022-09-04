@@ -1,0 +1,53 @@
+.container {
+
+    @apply gap-[9px] grid bg-[#FFFFFF] shadow-products;
+
+    .header {
+        @apply font-sans text-[20px] text-[#6F6F6F] font-[400] leading-[26px] tracking-[0.25px];
+    }
+
+    .buttons {
+        @apply flex gap-[8px];
+
+        & .mug {
+            @apply bg-[#1EA4CE] h-[30px] justify-center items-center flex border-none;
+
+            &:hover {
+                @apply bg-[#1EA4CE];
+            }
+
+            &:focus {
+                @apply bg-[#1EA4CE];
+            }
+
+            &>span {
+                @apply font-sans text-[13px] text-[#F2F0FD] font-bold leading-[18px];
+            }
+        }
+
+        & .shirt {
+
+            @apply bg-[#F2F0FD] h-[30px] justify-center items-center flex border-none;
+
+            &:hover {
+                @apply bg-[#F2F0FD]
+            }
+
+            &:focus {
+                @apply bg-[#F2F0FD]
+            }
+
+            &>span {
+                @apply font-sans text-[13px] text-[#1EA4CE] font-bold leading-[18px];
+            }
+        }
+    }
+
+    .products {
+        @apply grid lg:grid-cols-4 grid-cols-2 md:grid-cols-4 gap-[20px] px-[20px] py-[17px];
+    }
+
+    .pagination {
+        @apply self-center justify-self-center;
+    }
+}

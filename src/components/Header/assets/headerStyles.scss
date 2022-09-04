@@ -1,0 +1,62 @@
+.nav {
+    @apply bg-[#1EA4CE] lg:h-[76.64px] h-[50px] grid grid-cols-3 gap-4 w-full
+    
+}
+
+
+.navBurger {
+    @apply flex items-center;
+    & >button{
+        @apply text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none;
+
+    }
+}
+
+.header{
+    @apply justify-center items-center text-center flex;
+    &>img{
+        @apply w-[141.25px] h-[40.32px]
+    }
+}
+
+.logo{
+    @apply lg:h-[40.32px] lg:w-[141.25px]
+}
+
+.basketButton {
+ @apply h-full lg:w-[129px] bg-[#147594] ml-auto lg:mr-[7.22vw] flex items-center justify-center lg:px-[20px] px-[10px] gap-[8px] w-fit;
+}
+
+.basketIcon{
+    @apply h-[18.35px] w-[15.18px];
+}
+
+.basketText {
+    @apply font-sans text-[14px] text-[#FFFFFF] font-bold leading-[18px] tracking-[0.16px]
+}
+
+// .nav {
+//     @apply flex items-center bg-[#1EA4CE] lg:h-[76.64px] h-[50px] w-full;
+
+//     & >nav{
+
+//         @apply flex w-full mr-[7.22%];
+
+//         & .header {
+//             @apply mr-auto ml-auto;
+//         }
+    
+//         & >button {
+//             @apply mr-auto;
+//             &>svg{
+//                 @apply block lg:hidden;
+//             }
+//         }
+    
+//         & .basketButton {
+//             @apply flex items-center px-[10px] ml-auto h-full bg-[#147594]
+//         }    
+//     }
+
+
+// }

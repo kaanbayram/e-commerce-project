@@ -1,0 +1,39 @@
+.product {
+    @apply bg-[#FFFFFF] justify-self-center flex flex-col gap-[6.5px];
+
+    & .productBG {
+        @apply rounded-[12px] border-solid border-[#F3F0FE] border-[1.17666px] shadow-product flex items-center justify-center p-[16px];
+
+        & .productImage {
+            @apply lg:h-[6vw] md:h-[25vw] h-[50vw] bg-[#C4C4C4];
+        }
+    }
+
+    & .price {
+        @apply text-[#1EA4CE] font-helvatica font-[700] text-[14px] leading-[20px] ml-[3px];
+    }
+
+    & .productTitle {
+        @apply font-sans font-[600] text-[14px] leading-[20px] text-[#191919] text-ellipsis overflow-hidden;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        display:-webkit-box;
+    }
+
+    & .addButton {
+
+        @apply lg:h-[1.5vw] md:h-[3vw] items-center flex justify-center bg-[#1EA4CE] rounded-[2px] border-solid border-[1px] border-[#1EA4CE];
+
+        &>span {
+            @apply font-sans font-[600] text-[12px] leading-[20px] text-[#FFFFFF];
+        }
+
+        &:hover {
+            @apply bg-[#1EA4CE];
+        }
+
+        &:focus {
+            @apply bg-[#1EA4CE];
+        }
+    }
+}

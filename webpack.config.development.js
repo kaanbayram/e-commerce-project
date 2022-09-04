@@ -18,6 +18,16 @@ module.exports = (env, options) => {
                     exclude: /node_modules/,
                 },
                 {
+                    test: /\.(css)$/,
+                    use: [
+                        "style-loader",
+                        {
+                            loader: "css-loader"
+                        },
+                        'postcss-loader'
+                    ],
+                },
+                {
                     test: /\.scss$/,
                     use: [
                         MiniCssExtractPlugin.loader,
@@ -54,8 +64,8 @@ module.exports = (env, options) => {
                     options: {
                         publicPath: "../",
                         name: "[path][name].[ext]",
-                        context: path.resolve(__dirname, "src/assets"),
-                        emitFile: false,
+                        // context: path.resolve(__dirname, "src/assets"),
+                        // emitFile: false,
                     },
                 },
                 {

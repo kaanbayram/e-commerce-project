@@ -1,20 +1,21 @@
-import React from "react";
-import { Basket, Filters, Products } from "../";
-import * as Styles from './assets/contentStyles.scss'
- 
-export default function Content(){
+import { changeFilterDrawerStatusAction } from "../../redux/actions";
+import { connect } from "react-redux";
+import { BaseState } from "../../entities";
+import { Content } from "./Content";
+import { IContentActionProps, IContentProps } from "./entities";
 
-    return(
-        <div className={Styles.content}>
-            <div className={Styles.column}>
-                <Filters />
-            </div>
-            <div className={Styles.productsColumn}>
-                <Products />
-            </div>
-            <div className={Styles.column}>
-                <Basket />
-            </div>
-        </div>
-    );
+const mapStateToProps = function (state: BaseState): IContentProps {
+    return {
+        filterDrawer: state.filterDrawer
+    }
 }
+
+const mapDispatchToProps = function (dispatch: Function): IContentActionProps {
+    return {
+        changeFilterDrawerStatus: (data: any) => {
+            dispatch(changeFilterDrawerStatusAction(data));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

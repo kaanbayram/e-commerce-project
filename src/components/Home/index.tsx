@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header,Content } from '../';
+import { Header, Content, Footer } from '../';
 import * as Styles from "./assets/homeStyles.scss";
 
 export default function Home(props: any) {
@@ -7,6 +7,7 @@ export default function Home(props: any) {
         <div className={Styles.home}>
             <Header />
             <Content />
+            <Footer />
         </div>
     );
 }

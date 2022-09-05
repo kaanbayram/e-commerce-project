@@ -1,0 +1,3 @@
+export enum BaseActionTypes {
+    BASE_CHANGE_FILTER_DRAWER_STATUS = "BASE_CHANGE_FILTER_DRAWER_STATUS",
+} 

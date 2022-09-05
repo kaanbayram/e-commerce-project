@@ -7,7 +7,9 @@ declare namespace IndexScssNamespace {
     "border-solid": string;
     "border-transparent": string;
     container: string;
+    contents: string;
     "cursor-pointer": string;
+    filter: string;
     flex: string;
     "flex-col": string;
     "flex-grow": string;
@@ -40,6 +42,8 @@ declare namespace IndexScssNamespace {
     "mx-auto": string;
     "opacity-75": string;
     "outline-none": string;
+    "overflow-x-hidden": string;
+    "overflow-y-hidden": string;
     "px-2": string;
     "px-3": string;
     "px-4": string;
@@ -48,6 +52,8 @@ declare namespace IndexScssNamespace {
     "py-3": string;
     relative: string;
     rounded: string;
+    scrollbar: string;
+    "scrollbar-thin": string;
     static: string;
     "text-2xl": string;
     "text-7xl": string;
@@ -58,6 +64,7 @@ declare namespace IndexScssNamespace {
     "text-xs": string;
     underline: string;
     uppercase: string;
+    visible: string;
     "w-auto": string;
     "w-full": string;
     "whitespace-nowrap": string;

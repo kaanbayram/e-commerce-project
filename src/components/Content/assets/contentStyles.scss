@@ -1,12 +1,16 @@
 .content {
-    @apply grid grid-cols-1  lg:grid-cols-4 gap-[16px] lg:mr-[7.22%] lg:ml-[7.22%] mt-[38.36px];
+    @apply grid grid-cols-1 lg:grid-cols-4 gap-[16px] lg:mr-[7.22%] lg:ml-[7.22%] mt-[38.36px];
 
 
-    .column{
-        @apply border-solid border-[1px] border-blue-400 lg:block md:hidden hidden;
+    .column {
+        @apply border-solid border-[1px] border-blue-400 lg:block md:hidden hidden h-fit;
     }
 
     .productsColumn {
         @apply border-solid border-[1px] border-blue-400 lg:col-start-2 lg:col-span-2;
     }
+}
+
+.drawerContainer {
+    @apply mx-auto;
 }

@@ -48,6 +48,90 @@
     }
 
     .pagination {
-        @apply self-center justify-self-center;
+        @apply self-center justify-self-center flex;
+
+        :global {
+
+            .ant-pagination-jump-next {
+                @apply flex items-center justify-center;
+
+                &>a {
+                    .ant-pagination-item-container {
+                        @apply flex justify-center;
+                        color:#697488;
+                    }
+                }
+            }
+
+            .ant-pagination-item {
+                border:unset;
+
+                @apply flex items-center justify-center;
+
+                &>a {
+                    @apply font-sans text-[14px] text-[#697488] font-bold leading-[16px];
+                }
+            }
+
+            .ant-pagination-item-active {
+                @apply bg-[#1EA4CE];
+
+                &>a {
+                    @apply font-sans text-[14px] text-[#FFFFFF] font-bold leading-[16px];
+                }
+            }
+
+            .ant-pagination-options {
+                display:none;
+            }
+
+            .ant-pagination-prev {
+                @apply flex items-start justify-center;
+            }
+
+            .ant-pagination-next {
+                @apply flex items-start justify-center;
+            }
+
+
+        }
+    }
+
+    .prevContainer {
+        @apply flex items-center justify-center gap-[10px] self-center justify-self-center lg:mr-[40px] md:mr-[40px];
+
+        &>span {
+            @apply mr-auto inline-block font-sans text-[14px] text-[#1EA4CE] font-bold leading-[16px];
+        }
+
+        &>img {
+            @apply ml-auto inline-block w-[14px] h-[14px];
+        }
+    }
+
+    .nextContainer {
+        @apply flex items-center justify-center gap-[10px] self-center justify-self-center lg:ml-[50px] md:ml-[50px];
+
+        &>span {
+            @apply mr-auto inline-block font-sans text-[14px] text-[#697488] font-bold leading-[16px];
+        }
+
+        &>img {
+            @apply ml-auto inline-block w-[14px] h-[14px];
+        }
+    }
+
+    .jumpNext {
+        @apply flex items-center justify-center h-[100%];
+        & >span {
+            @apply font-sans text-[14px] text-[#697488] font-bold leading-[16px] h-[100%] mt-[7px];
+        }
+    }
+
+    .jumpPrev {
+        @apply flex items-center justify-center h-[100%];
+        & >span {
+            @apply font-sans text-[14px] text-[#697488] font-bold leading-[16px] h-[100%] mt-[9px];
+        }
     }
 }

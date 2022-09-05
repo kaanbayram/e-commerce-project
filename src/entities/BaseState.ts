@@ -1,11 +1,21 @@
 import { Record } from "immutable";
 
 export interface IBaseState {
-    products: any
+    filterDrawer: boolean
 }
 
-export type BaseState = Record<IBaseState> & Readonly<IBaseState>;
+export interface IReadOnlyBaseState {
+    filterDrawer: boolean
+}
 
-export const BaseStateFactory = Record<IBaseState>({
-    products: null
+export type BaseState = Record<IBaseState> & Readonly<IReadOnlyBaseState>;
+
+export const BaseStateFactory = Record<IReadOnlyBaseState>({
+    filterDrawer: false,
 })
+
+export const BaseStateFactoryFromJS = function (data: IBaseState) {
+    return BaseStateFactory({
+        filterDrawer: data.filterDrawer
+    })
+}

@@ -1,0 +1,20 @@
+.item {
+    @apply max-w-[231px] h-[40.88px] flex;
+
+    & .leftContainer {
+        @apply mr-auto flex flex-col;
+        & .title {
+            @apply mb-auto font-sans text-[14px] text-[#191919] font-[400] leading-[18px] tracking-[0.16px];
+        }
+
+        & .priceTag {
+            @apply mt-auto mr-auto font-sans text-[14px] text-[#1EA4CE] font-[600] leading-[18px] tracking-[0.16px];
+        }
+    }
+
+
+
+    & .count {
+        @apply ml-auto;
+     }
+}

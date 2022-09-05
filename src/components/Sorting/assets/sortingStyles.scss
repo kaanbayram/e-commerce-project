@@ -1,0 +1,18 @@
+.sortingContainer {
+    @apply pl-[30px] my-auto;
+
+    :global {
+
+        .ant-radio-group {
+            .ant-space {
+                gap: 17px !important
+            }
+        }
+
+        .ant-radio-wrapper {
+            &>span {
+                @apply font-sans text-[14px] text-[#525252] font-[400] leading-[18px] tracking-[0.16px];
+            }
+        }
+    }
+}

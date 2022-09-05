@@ -5,3 +5,7 @@ export { default as Products } from './Products';
 export { default as Basket } from './Basket';
 export { default as Product } from './Product';
 export { default as Filters } from './Filters';
+export { default as Footer } from './Footer';
+export { default as Sorting } from './Sorting';
+export { default as Filter } from './Filter';
+export { default as BasketItem } from './BasketItem';

@@ -1,0 +1,25 @@
+.filterContainer {
+    @apply px-[30px] my-auto w-[100%];
+
+    .search {
+        @apply mb-[15px] border-solid border-[2px] border-[#E0E0E0] h-[48px];
+    }
+
+    :global {
+        .ant-checkbox-group .ant-row .ant-col .ant-checkbox-wrapper {
+            @apply ml-[0px] mb-[21px];
+
+            &>span {
+                @apply font-sans text-[14px] text-[#525252] font-[400] leading-[18px] tracking-[0.16px];
+            }
+
+        }
+    }
+
+    & .scrollbar {
+        @apply h-[142px] scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full;
+        --scrollbar-thumb:#E0E0E0 !important;
+        scrollbar-width: 1px !important;
+    }
+}
+

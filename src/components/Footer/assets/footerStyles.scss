@@ -1,0 +1,7 @@
+.footer {
+    @apply flex justify-center mt-[30px];
+    & >pre {
+        @apply font-sans text-[13px] text-[#697488] font-[400] leading-[174%] bottom-[23px];
+        position: initial !important;
+    }
+}

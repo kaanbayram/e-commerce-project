@@ -3,8 +3,12 @@ declare namespace ProductsStylesScssNamespace {
     buttons: string;
     container: string;
     header: string;
+    jumpNext: string;
+    jumpPrev: string;
     mug: string;
+    nextContainer: string;
     pagination: string;
+    prevContainer: string;
     products: string;
     shirt: string;
   }

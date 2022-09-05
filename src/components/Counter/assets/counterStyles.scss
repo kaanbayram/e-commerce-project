@@ -1,0 +1,10 @@
+.container {
+    @apply w-[74px] h-[32.7px];
+
+    & .decrease {
+    }
+
+    & .counter {}
+
+    & .increase {}
+}

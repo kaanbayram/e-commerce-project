@@ -1,0 +1,24 @@
+.basket {
+    @apply max-w-[296px] w-[100%] h-[338.25px] border-solid border-[8px] border-[#1EA4CE] p-[23.22px] flex flex-col;
+
+    & .basketItems {
+        @apply h-[142px] scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full;
+        --scrollbar-thumb: #E0E0E0 !important;
+        scrollbar-width: 1px !important;
+        @apply border-solid border-[1px] border-blue-400;
+
+        
+    }
+
+    & .basketButton {
+        @apply ml-auto w-[92px] h-[51.1px] border-solid border-[2px] border-[#1EA4CE] bg-[#FFFFFF] rounded-[2px] mt-auto;
+
+        &:focus {
+            @apply border-solid border-[2px] border-[#1EA4CE];
+        }
+
+        &>span {
+            @apply font-sans text-[14px] text-[#1EA4CE] font-[600] leading-[16px] tracking-[0.16px];
+        }
+    }
+}

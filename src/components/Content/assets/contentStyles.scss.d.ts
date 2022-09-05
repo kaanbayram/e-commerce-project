@@ -2,6 +2,7 @@ declare namespace ContentStylesScssNamespace {
   export interface IContentStylesScss {
     column: string;
     content: string;
+    drawerContainer: string;
     productsColumn: string;
   }
 }

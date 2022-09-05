@@ -24,7 +24,7 @@
 }
 
 .basketButton {
- @apply h-full lg:w-[129px] bg-[#147594] ml-auto lg:mr-[7.22vw] flex items-center justify-center lg:px-[20px] px-[10px] gap-[8px] w-fit;
+ @apply h-full lg:w-[129px] bg-[#147594] ml-auto lg:mr-[7.22vw] flex items-center justify-center lg:px-[20px] px-[10px] gap-[8px] w-fit lg:pointer-events-none;
 }
 
 .basketIcon{

@@ -3,11 +3,13 @@
 
 
     .column {
-        @apply border-solid border-[1px] border-blue-400 lg:block md:hidden hidden h-fit;
+        @apply lg:block md:hidden hidden h-fit;
     }
 
+    //border-solid border-[1px] border-blue-400
+
     .productsColumn {
-        @apply border-solid border-[1px] border-blue-400 lg:col-start-2 lg:col-span-2;
+        @apply lg:col-start-2 lg:col-span-2;
     }
 }
 

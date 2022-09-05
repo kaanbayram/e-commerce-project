@@ -1,20 +1,21 @@
 .item {
-    @apply max-w-[231px] h-[40.88px] flex;
+    @apply max-w-[231px] h-[40.88px] flex my-[11.5px];
 
     & .leftContainer {
-        @apply mr-auto flex flex-col;
+        @apply mr-auto flex flex-col overflow-hidden;
+
         & .title {
-            @apply mb-auto font-sans text-[14px] text-[#191919] font-[400] leading-[18px] tracking-[0.16px];
+            @apply mb-auto font-sans text-[14px] text-[#191919] font-[400] leading-[18px] tracking-[0.16px] overflow-hidden overflow-ellipsis whitespace-nowrap;
         }
 
         & .priceTag {
-            @apply mt-auto mr-auto font-sans text-[14px] text-[#1EA4CE] font-[600] leading-[18px] tracking-[0.16px];
+            @apply mt-auto mr-auto font-sans text-[14px] text-[#1EA4CE] font-[600] leading-[18px] tracking-[0.16px] overflow-hidden overflow-ellipsis whitespace-nowrap w-[100%];
         }
     }
 
 
 
     & .count {
-        @apply ml-auto;
-     }
+        @apply ml-auto mt-[5px];
+    }
 }

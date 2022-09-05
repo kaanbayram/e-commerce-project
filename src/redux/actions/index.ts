@@ -1,2 +1,2 @@
 export { BaseActionTypes } from "./actionTypes";
-export { changeFilterDrawerStatusAction } from './actions'
+export { changeFilterDrawerStatusAction, changeBasketDrawerStatusAction } from './actions'

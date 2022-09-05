@@ -58,7 +58,7 @@ module.exports = (env, options) => {
                     ],
                 },
                 {
-                    test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+                    test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                     type: "javascript/auto",
                     loader: "file-loader",
                     options: {
@@ -79,6 +79,18 @@ module.exports = (env, options) => {
                         name: "[path][name].[ext]",
                         emitFile: false,
                     },
+                },
+                {
+                    test: /\.svg$/,
+                    loader: 'svg-url-loader',
+                    options: {
+                        limit: 10000,
+                        publicPath: "../",
+                        context: path.resolve(__dirname, "src/assets"),
+                        name: "[path][name].[ext]",
+                        emitFile: false,
+                    },
+
                 },
             ],
         },

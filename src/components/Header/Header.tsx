@@ -9,11 +9,13 @@ import BasketIcon from './assets/basket.png';
 import { IHeaderActionProps, IHeaderProps } from "./entities";
 
 export function Header(props: IHeaderProps & IHeaderActionProps) {
-    const [navbarOpen, setNavbarOpen] = React.useState(false);
-
 
     function openFilterDrawer() {
         props.changeFilterDrawerStatus(true);
+    }
+
+    function openBasketDrawer() {
+        props.changeBasketDrawerStatus(true);
     }
 
     return (
@@ -32,7 +34,7 @@ export function Header(props: IHeaderProps & IHeaderActionProps) {
 
                 <div>
 
-                    <div className={Styles.basketButton}>
+                    <div className={Styles.basketButton} onClick={openBasketDrawer}>
                         <img src={BasketIcon} className={Styles.basketIcon} />
                         <a className={Styles.basketText}>
                             ₺ 39,97

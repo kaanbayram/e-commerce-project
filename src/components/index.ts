@@ -9,3 +9,5 @@ export { default as Footer } from './Footer';
 export { default as Sorting } from './Sorting';
 export { default as Filter } from './Filter';
 export { default as BasketItem } from './BasketItem';
+export { default as Counter } from './Counter';
+

@@ -1,4 +1,4 @@
-import { changeFilterDrawerStatusAction } from "../../redux/actions";
+import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction } from "../../redux/actions";
 import { connect } from "react-redux";
 import { BaseState } from "../../entities";
 import { Header } from "./Header";
@@ -12,8 +12,11 @@ const mapStateToProps = function (state: BaseState): IHeaderProps {
 
 const mapDispatchToProps = function (dispatch: Function): IHeaderActionProps {
     return {
-        changeFilterDrawerStatus: (data: any) => {
+        changeFilterDrawerStatus: (data: boolean) => {
             dispatch(changeFilterDrawerStatusAction(data));
+        },
+        changeBasketDrawerStatus: (data: boolean) => {
+            dispatch(changeBasketDrawerStatusAction(data));
         }
     }
 }

@@ -1,10 +1,15 @@
 .container {
-    @apply w-[74px] h-[32.7px];
+    @apply w-[74px] h-[32.7px] flex;
 
     & .decrease {
+        @apply mr-auto w-[21px] flex items-center justify-center;
     }
 
-    & .counter {}
+    & .counter {
+        @apply bg-[#1EA4CE] mr-auto ml-auto w-[32px] flex items-center justify-center font-sans font-[700] text-[15px] text-[#FFFFFF] leading-[20px];
+    }
 
-    & .increase {}
+    & .increase {
+        @apply ml-auto w-[21px] flex items-center justify-center;
+    }
 }

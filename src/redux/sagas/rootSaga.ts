@@ -1,12 +1,23 @@
-import { put, takeEvery, all, take } from 'redux-saga/effects'
-import { BaseActionTypes } from '../actions';
+import { put, takeEvery, all, take, call } from 'redux-saga/effects'
+import { BaseActionTypes, setProductsAction } from '../actions';
+import axios from 'axios'
 
-
-function* helloSaga() {
+function* root() {
     console.log('Hello Sagas!')
-    yield takeEvery(BaseActionTypes.BASE_CHANGE_FILTER_DRAWER_STATUS, () => { console.log("test") })
+    yield takeEvery(BaseActionTypes.BASE_INITIALIZE_DATA, initializeData)
+}
+
+function* initializeData() {
+    try {
+        const { data } = yield call(axios.get, 'https://getir-assignment-app-server.herokuapp.com/api/products');
+        // const { data } = yield call(axios.get, 'https://getir-assignment-app-server.herokuapp.com/api/products');
+        // console.log(data);
+        yield put(setProductsAction(data))
+    } catch (e: any) {
+        console.log(e.message)
+    }
 }
 
 export default function* rootSaga() {
-    yield all([helloSaga()]);
+    yield all([root()]);
 }

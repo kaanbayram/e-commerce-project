@@ -1,0 +1,1 @@
+export { IProductProps } from './IProductProps';

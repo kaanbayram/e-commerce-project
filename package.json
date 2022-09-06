@@ -21,6 +21,7 @@
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",
         "antd": "^4.22.8",
+        "axios": "^0.27.2",
         "classnames": "^2.3.1",
         "immutable": "^4.1.0",
         "lodash": "^4.17.21",

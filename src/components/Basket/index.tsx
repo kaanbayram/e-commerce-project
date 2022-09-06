@@ -1,11 +1,12 @@
 import { Button } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Scrollbars from "react-custom-scrollbars-2";
 import { BasketItem } from "../";
 import * as Styles from './assets/basketStyles.scss';
+import { IBasketProps } from "./entities";
 
-export default function Basket() {
 
+export default function Basket(props: IBasketProps) {
 
     return (
         <div className={Styles.basket}>
@@ -13,7 +14,7 @@ export default function Basket() {
                 <BasketItem />
             </div>
             <Button className={Styles.basketButton}>
-                ₺39,97
+                {`₺${props.prices}`}
             </Button>
         </div>
     );

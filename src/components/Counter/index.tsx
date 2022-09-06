@@ -1,21 +1,19 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button } from 'antd';
 import React, { useState } from 'react';
 import * as Styles from './assets/counterStyles.scss';
 import Decrease from "./assets/Decrease.png";
 import Increase from "./assets/Increase.png";
+import { ICounterActionProps, ICounterProps } from './entities';
 
 
-export default function Counter(props: any) {
+export default function Counter(props: ICounterProps & ICounterActionProps) {
 
-    const [counter, setCounter] = useState<number>(0);
 
     function onIncrease() {
-        setCounter(counter + 1);
+        props.onIncrease();
     }
 
     function onDecrease() {
-        setCounter(counter - 1);
+        props.onDecrease();
     }
 
     return (
@@ -26,7 +24,7 @@ export default function Counter(props: any) {
             </div>
 
             <div className={Styles.counter}>
-                {counter}
+                {props.count}
             </div>
 
             <div className={Styles.increase} onClick={onIncrease}>

@@ -14,7 +14,7 @@
     }
 
     & .productTitle {
-        @apply font-sans font-[600] text-[14px] leading-[20px] text-[#191919] text-ellipsis overflow-hidden;
+        @apply font-sans font-[600] text-[14px] leading-[20px] text-[#191919] text-ellipsis overflow-hidden max-h-[20px];
         -webkit-line-clamp:2;
         -webkit-box-orient:vertical;
         display:-webkit-box;

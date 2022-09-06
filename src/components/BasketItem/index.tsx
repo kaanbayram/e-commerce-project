@@ -1,35 +1,21 @@
-import React from 'react';
-import { Counter } from '../';
-import * as Styles from './assets/basketItem.scss';
+import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction, initializeDataAction, setBasketAction } from "../../redux/actions";
+import { connect } from "react-redux";
+import { BaseState } from "../../entities";
+import { IBasketItemActionProps, IBasketItemProps } from "./entities";
+import BasketItem from "./BasketItem";
 
-export default function BasketItem() {
-
-    function getProducts() {
-        return [getProduct(), getProduct(), getProduct(), getProduct()]
-
+const mapStateToProps = function (state: BaseState): IBasketItemProps {
+    return {
+        basket: state.basket
     }
-
-    function getProduct() {
-        return (
-            <>
-                <div className={Styles.item}>
-                    <div className={Styles.leftContainer}>
-                        <span className={Styles.title}>Example Product</span>
-                        <span className={Styles.priceTag}>₺ 323232323232323232</span>
-                    </div>
-
-                    <div className={Styles.count}>
-                        <Counter />
-                    </div>
-                </div>
-                <hr />
-            </>
-        );
-    }
-
-    return (
-        <>
-            {...getProducts()}
-        </>
-    );
 }
+
+const mapDispatchToProps = function (dispatch: Function): IBasketItemActionProps {
+    return {
+        setBasket: (data: string) => {
+            dispatch(setBasketAction(data));
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketItem);

@@ -2,10 +2,19 @@ import { Drawer } from "antd";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Basket, Filters, Products } from "../";
+import { IBasketItem } from "../../common";
 import * as Styles from './assets/contentStyles.scss'
 import { IContentActionProps, IContentProps } from "./entities";
 
 export function Content(props: IContentProps & IContentActionProps) {
+
+    useEffect(() => {
+        document.body.style.overflow = (props.basketDrawer || props.filterDrawer) ? "hidden" : "scroll";
+    }, [props.basketDrawer, props.filterDrawer]);
+
+    useEffect(() => {
+        props.initializeData()
+    })
 
     function onCloseFilterDrawer() {
         props.changeFilterDrawerStatus(false);
@@ -15,9 +24,15 @@ export function Content(props: IContentProps & IContentActionProps) {
         props.changeBasketDrawerStatus(false);
     }
 
-    useEffect(() => {
-        document.body.style.overflow = (props.basketDrawer || props.filterDrawer) ? "hidden" : "scroll";
-    }, [props.basketDrawer, props.filterDrawer])
+    function getPrices() {
+        if (props.basket) {
+            return JSON.parse(props.basket)
+                .map((item: IBasketItem) => (item.count as number) * item.price)
+                ?.reduce((result: any, item: IBasketItem) => result + item)
+                ?.toFixed(2);
+        }
+        return 0;
+    }
 
     function filterDrawer() {
         return (
@@ -52,7 +67,7 @@ export function Content(props: IContentProps & IContentActionProps) {
                     visible={props.basketDrawer}
                 >
                     <div className={Styles.drawerContainer}>
-                        <Basket />
+                        <Basket prices={getPrices()} />
                     </div>
                 </Drawer>
             </>
@@ -72,8 +87,9 @@ export function Content(props: IContentProps & IContentActionProps) {
                     <Products />
                 </div>
                 <div className={Styles.column}>
-                    <Basket />
+                    <Basket prices={getPrices()} />
                 </div>
+
             </div>
         </>
     );

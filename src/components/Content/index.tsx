@@ -1,4 +1,4 @@
-import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction } from "../../redux/actions";
+import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction, initializeDataAction } from "../../redux/actions";
 import { connect } from "react-redux";
 import { BaseState } from "../../entities";
 import { Content } from "./Content";
@@ -8,6 +8,7 @@ const mapStateToProps = function (state: BaseState): IContentProps {
     return {
         filterDrawer: state.filterDrawer,
         basketDrawer: state.basketDrawer,
+        basket: state.basket
     }
 }
 
@@ -18,7 +19,10 @@ const mapDispatchToProps = function (dispatch: Function): IContentActionProps {
         },
         changeBasketDrawerStatus: (data: boolean) => {
             dispatch(changeBasketDrawerStatusAction(data));
-        }
+        },
+        initializeData: () => {
+            dispatch(initializeDataAction());
+        },
     }
 }
 

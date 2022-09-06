@@ -2,6 +2,9 @@
     "name": "react-typescript-webpack-starter",
     "version": "3.0.0",
     "description": "A starter project for using React, TypeScript, SCSS and Webpack",
+    "engines": {
+        "node": "16.15.0"
+    },
     "main": "index.js",
     "scripts": {
         "dev": "webpack serve --mode development --progress --hot --config ./webpack.config.development.js",

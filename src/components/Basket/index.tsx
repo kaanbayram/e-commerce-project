@@ -11,7 +11,7 @@ export default function Basket(props: IBasketProps) {
 
     return (
         <div className={Styles.basket}>
-            <div className={cx({ BasketItems: true, hasItem: !localStorage.getItem("basket") })}>
+            <div className={cx({ basketItems: true, hasItem: !localStorage.getItem("basket") })}>
                 <BasketItem />
             </div>
             <Button className={Styles.basketButton}>

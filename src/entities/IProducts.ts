@@ -1,7 +1,7 @@
 import { List, Record } from "immutable";
 import { ReadonlyRecord } from ".";
 
-export interface IBaseProducts {
+export interface IBaseProduct {
     _id: string;
     price: number;
     name: string;
@@ -12,11 +12,11 @@ export interface IBaseProducts {
     itemType: string;
 }
 
-export interface IProduct extends IBaseProducts {
+export interface IProduct extends IBaseProduct {
     tags: Array<string>;
 }
 
-export interface IReadOnlyProducts extends IBaseProducts {
+export interface IReadOnlyProducts extends IBaseProduct {
     tags: List<string>
 }
 

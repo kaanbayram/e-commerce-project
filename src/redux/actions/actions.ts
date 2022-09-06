@@ -1,5 +1,5 @@
 import { List } from "immutable";
-import { IProduct, ProductFactoryFromJS } from "../../entities";
+import { CompanyFactoryFromJS, ICompany, IProduct, ProductFactoryFromJS } from "../../entities";
 import { BaseActionTypes } from "./actionTypes";
 
 export function changeFilterDrawerStatusAction(data: boolean) {
@@ -15,8 +15,13 @@ export function initializeDataAction() {
 }
 
 export function setProductsAction(data: IProduct[]) {
-    const _producst = data ? data.map(prod => ProductFactoryFromJS(prod)) : [];
-    return { type: BaseActionTypes.BASE_SET_PRODUCTS, data: List(_producst) };
+    const _products = data ? data.map(prod => ProductFactoryFromJS(prod)) : [];
+    return { type: BaseActionTypes.BASE_SET_PRODUCTS, data: List(_products) };
+}
+
+export function setCompaniesAction(data: ICompany[]) {
+    const _companies = data ? data.map(comp => CompanyFactoryFromJS(comp)) : [];
+    return { type: BaseActionTypes.BASE_SET_COMPANIES, data: List(_companies) };
 }
 
 export function setBasketAction(data: string) {

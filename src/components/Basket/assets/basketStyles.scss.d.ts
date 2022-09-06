@@ -3,6 +3,7 @@ declare namespace BasketStylesScssNamespace {
     basket: string;
     basketButton: string;
     basketItems: string;
+    hasItem: string;
     "overflow-x-hidden": string;
     "overflow-y-hidden": string;
   }

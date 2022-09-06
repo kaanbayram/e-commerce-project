@@ -1,6 +1,7 @@
 declare namespace BasketItemScssNamespace {
   export interface IBasketItemScss {
     count: string;
+    emptyText: string;
     item: string;
     leftContainer: string;
     priceTag: string;

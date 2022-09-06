@@ -22,6 +22,12 @@ export default function BasketItem(props: IBasketItemProps & IBasketItemActionPr
 
         const basket = JSON.parse(props.basket || "[]");
 
+        if (basket.length === 0) {
+            return (
+                <><span className={Styles.emptyText}>Basket Is Empty</span></>
+            );
+        }
+
         return basket.map((basketItem: IBasketItem) => {
             return (
                 <>
@@ -44,7 +50,7 @@ export default function BasketItem(props: IBasketItemProps & IBasketItemActionPr
 
     return (
         <>
-            {...getProducts()}
+            {getProducts()}
         </>
     );
 }

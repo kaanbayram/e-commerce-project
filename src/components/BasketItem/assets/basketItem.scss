@@ -19,3 +19,7 @@
         @apply ml-auto mt-[5px];
     }
 }
+
+.emptyText {
+    @apply mx-auto my-auto font-sans text-[15px] text-[#1EA4CE] font-[600] leading-[18px] tracking-[0.16px] self-center justify-self-center;
+}

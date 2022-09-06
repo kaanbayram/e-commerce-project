@@ -15,23 +15,3 @@ export default function (): Store<any> {
 
     return store;
 }
-
-function createSagaInjector(runSaga: any, rootSaga: any) {
-
-    const injectSagas = new Map();
-
-    const isInjected = (key: string) => injectSagas.has(key);
-
-    const injectSaga = (key: string, saga: any) => {
-
-        if (isInjected(key)) return;
-
-        const task = runSaga(saga);
-
-        injectSagas.set(key, task);
-    };
-
-    injectSaga('root', rootSaga);
-
-    return injectSaga;
-}

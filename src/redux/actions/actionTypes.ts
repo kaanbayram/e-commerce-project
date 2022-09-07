@@ -4,5 +4,14 @@ export enum BaseActionTypes {
     BASE_INITIALIZE_DATA = "BASE_INITIALIZE_DATA",
     BASE_SET_PRODUCTS = "BASE_SET_PRODUCTS",
     BASE_SET_COMPANIES = "BASE_SET_COMPANIES ",
-    BASE_SET_BASKET = "BASE_SET_BASKET"
-} 
+    BASE_SET_BASKET = "BASE_SET_BASKET",
+    BASE_CHANGE_FILTER = "BASE_CHANGE_FILTER",
+    BASE_CHANGE_LOADING_STATUS = "BASE_CHANGE_LOADING_STATUS"
+}
+
+export interface IFilterActionPayload {
+    path: FilterPath,
+    data: any
+}
+
+export type FilterPath = "brandFilter" | "tagFilter" | "sortingType" | "itemTypeFilter"; 

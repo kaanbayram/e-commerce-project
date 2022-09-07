@@ -1,4 +1,4 @@
-import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction, initializeDataAction, setBasketAction } from "../../redux/actions";
+import { setBasketAction } from "../../redux/actions";
 import { connect } from "react-redux";
 import { BaseState } from "../../entities";
 import { IBasketItemActionProps, IBasketItemProps } from "./entities";

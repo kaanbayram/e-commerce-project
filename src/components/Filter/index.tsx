@@ -1,8 +1,8 @@
 import { Checkbox, Col, Row, Input } from "antd";
 import { CheckboxValueType } from "antd/lib/checkbox/Group";
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styles from './assets/filterStyles.scss';
-import { Scrollbars } from 'react-custom-scrollbars-2';
+import { IFilterProps } from "./entities";
 
 const options = [
     { label: 'Apple', value: 'Apple' },
@@ -10,32 +10,47 @@ const options = [
     { label: 'Orange', value: 'Orange' },
 ];
 
-export default function Filter() {
+export default function Filter(props: IFilterProps) {
 
-    const onChange = (checkedValues: CheckboxValueType[]) => {
-        console.log('checked = ', checkedValues);
+    const [searchValue, setSearchValue] = useState<string>("");
+
+    function onChange(checkedValues: CheckboxValueType[]) {
+        props.onChange?.(checkedValues);
     };
 
-    
+
+    /**
+     * Used for brand and tag filter
+     * you can search your items
+     * @returns
+     */
+    function getItems() {
+        return props.items
+            .filter((item) => item.name.toLocaleLowerCase().indexOf(searchValue.toLocaleLowerCase()) >= 0)
+            .map((item) => {
+                return (
+                    <Checkbox value={item.id}>{item.name}</Checkbox>
+                );
+            });
+    }
+
+    function onChangeSearchValue(e: any) {
+        setSearchValue(e.target.value);
+    }
 
     return (
         <div className={Styles.filterContainer}>
-            <Input className={Styles.search} placeholder={"Search brand"} />
-            {/* <Scrollbars renderTrackVertical={props => <div id="test" style={{display:"none"}} {...props} className="track-vertical"/>} style={{ height: 142 }}> */}
-            <div className={Styles.scrollbar}>
-                <Checkbox.Group defaultValue={['A']} onChange={onChange}>
+            <Input className={Styles.search} placeholder={"Search brand"} onChange={onChangeSearchValue} />
+
+            <div className={[Styles.scrollbar, props.styles].join(" ")}>
+                <Checkbox.Group onChange={onChange}>
                     <Row>
                         <Col span={1}>
-                            <Checkbox value="A">Test</Checkbox>
-                            <Checkbox value="B">Test</Checkbox>
-                            <Checkbox value="C">Test</Checkbox>
-                            <Checkbox value="D">Test</Checkbox>
-                            <Checkbox value="E">Test</Checkbox>
+                            {getItems()}
                         </Col>
                     </Row>
                 </Checkbox.Group>
-                </div>
-            {/* </Scrollbars> */}
+            </div>
         </div>
     );
 }

@@ -1,0 +1,1 @@
+export { ISortingProps } from './ISortingProps';

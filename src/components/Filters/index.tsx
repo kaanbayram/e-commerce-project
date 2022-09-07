@@ -1,45 +1,23 @@
-import React from "react";
-import { Sorting, Filter } from "../";
-import * as Styles from './assets/filterStyles.scss'
+import { changeFilterSortingAction, IFilterActionPayload } from "../../redux/actions";
+import { connect } from "react-redux";
+import { BaseState } from "../../entities";
+import { Filters } from "./Filters";
+import { IFiltersActionProps, IFiltersProps } from "./entities";
 
-export default function Filters() {
-
-
-    return (
-        <div className={Styles.container}>
-
-            <div className={Styles.sortingContainer}>
-
-                <span className={Styles.header}>Sorting</span>
-
-                <div className={Styles.sorting}>
-
-                    <Sorting />
-
-                </div>
-
-            </div>
-
-            <div className={Styles.filterContainer}>
-
-                <span className={Styles.header}>Brands</span>
-
-                <div className={Styles.filter}>
-                    <Filter />
-                </div>
-
-            </div>
-
-            <div className={Styles.filterContainer}>
-
-                <span className={Styles.header}>Tags</span>
-
-                <div className={Styles.filter}>
-                    <Filter />
-                </div>
-
-            </div>
-
-        </div>
-    );
+const mapStateToProps = function (state: BaseState): IFiltersProps {
+    return {
+        companies: state.companies,
+        products: state.products,
+        sortingType: state.sortingType
+    }
 }
+
+const mapDispatchToProps = function (dispatch: Function): IFiltersActionProps {
+    return {
+        changeFilters: (data: IFilterActionPayload) => {
+            dispatch(changeFilterSortingAction(data));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);

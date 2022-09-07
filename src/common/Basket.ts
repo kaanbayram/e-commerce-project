@@ -1,3 +1,9 @@
+/**
+ * Inside the Basket Class 
+ * Created static methods purpose of 
+ * reach without create object and 
+ * manage easily localStorage
+ */
 export class Basket {
 
     static addToBasket(basketItem: IBasketItem) {

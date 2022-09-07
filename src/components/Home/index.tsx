@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
-import { Header, Content, Footer } from '../';
-import * as Styles from "./assets/homeStyles.scss";
+import { connect } from "react-redux";
+import { BaseState } from "../../entities";
+import { Home } from "./Home";
+import { IHomeActionProps, IHomeProps } from "./entities";
 
-export default function Home(props: any) {
-
-    return (
-        <div className={Styles.home}>
-            <Header />
-            <Content />
-            <Footer />
-        </div>
-    );
+const mapStateToProps = function (state: BaseState): IHomeProps {
+    return {
+        loading: state.loading,
+    }
 }
+
+const mapDispatchToProps = function (dispatch: Function): IHomeActionProps {
+    return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

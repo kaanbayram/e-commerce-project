@@ -1,13 +1,18 @@
-import { changeBasketDrawerStatusAction, changeFilterDrawerStatusAction } from "../../redux/actions";
+import { IFilterActionPayload } from "../../redux/actions";
 import { connect } from "react-redux";
 import { BaseState } from "../../entities";
 import { IProductsActionProps, IProductsProps } from "./entities";
 import Products from "./Products";
-import { setBasketAction } from "../../redux/actions/actions";
+import { changeFilterSortingAction, setBasketAction } from "../../redux/actions";
 
 const mapStateToProps = function (state: BaseState): IProductsProps {
     return {
-        products: state.products
+        products: state.products,
+        companies: state.companies,
+        brandFilter: state.brandFilter,
+        sortingType: state.sortingType,
+        tagFilter: state.tagFilter,
+        itemTypeFilter: state.itemTypeFilter as any
     }
 }
 
@@ -16,6 +21,9 @@ const mapDispatchToProps = function (dispatch: Function): IProductsActionProps {
         setBasket: (data: string) => {
             dispatch(setBasketAction(data));
         },
+        changeFilter: (data: IFilterActionPayload) => {
+            dispatch(changeFilterSortingAction(data));
+        }
     }
 }
 

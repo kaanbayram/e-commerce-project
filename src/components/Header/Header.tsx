@@ -1,19 +1,24 @@
 import React from "react";
 import * as Styles from "./assets/headerStyles.scss";
-const className = require('classnames/bind');
-const cx = className.bind(Styles);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Logo from './assets/Logo.png';
 import BasketIcon from './assets/basket.png';
 import { IHeaderActionProps, IHeaderProps } from "./entities";
+import { getPrices } from "../../common";
 
 export function Header(props: IHeaderProps & IHeaderActionProps) {
 
+    /**
+     * Open filter drawer for small or medium screens
+     */
     function openFilterDrawer() {
         props.changeFilterDrawerStatus(true);
     }
 
+    /**
+     * Open basket drawer for small or medium screens
+     */
     function openBasketDrawer() {
         props.changeBasketDrawerStatus(true);
     }
@@ -37,7 +42,7 @@ export function Header(props: IHeaderProps & IHeaderActionProps) {
                     <div className={Styles.basketButton} onClick={openBasketDrawer}>
                         <img src={BasketIcon} className={Styles.basketIcon} />
                         <a className={Styles.basketText}>
-                            ₺ 39,97
+                            {`₺ ${getPrices(props.basket)}`}
                         </a>
                     </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Styles from './assets/counterStyles.scss';
 import Decrease from "./assets/Decrease.png";
 import Increase from "./assets/Increase.png";
@@ -16,6 +16,9 @@ export default function Counter(props: ICounterProps & ICounterActionProps) {
         props.onDecrease();
     }
 
+    /**
+     * Counter Component for basket items
+     */
     return (
         <div className={Styles.container}>
 

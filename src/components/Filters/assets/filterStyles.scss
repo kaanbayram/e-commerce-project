@@ -11,9 +11,9 @@
 
     & .filterContainer {
         @apply ml-auto lg:h-[274px] max-w-[296px] mb-[20px] w-[100%];
-        
 
-        & .filter{
+
+        & .filter {
             @apply bg-[#FFFFFF] lg:h-[244px] max-w-[296px] flex;
         }
     }
@@ -32,31 +32,12 @@
     }
 }
 
-// .container {
-//     @apply flex flex-col;
-
-//     & .sortingContainer {
-//         @apply flex flex-col pb-[17px] w-[296px] h-[214px];
-//         & .sorting {
-//             @apply bg-[#FFFFFF];
-//         }
-//     }
-
-//     & .brandsFilterContainer {
-//         @apply flex flex-col pb-[17px];
-//         & .filterByBrand {
-//             @apply bg-[#FFFFFF];
-//         }
-//     }
-
-//     & .tagsFilterContainer {
-//         @apply flex flex-col pb-[17px];
-//         & .filterByTags {
-//             @apply bg-[#FFFFFF];
-//         }
-//     }
-
-//     .header {
-//         @apply font-sans text-[13px] text-[#697488] font-[600] leading-[18px] pb-[10px];
-//     }
-// }
+.brandsFilter {
+    :global {
+        .ant-col {
+            flex:unset;
+            max-width:unset;
+            width:100%;
+        }
+    }
+}

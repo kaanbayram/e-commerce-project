@@ -1,12 +1,15 @@
 import { Button } from "antd";
 import React from "react";
-import { Basket } from "../../common";
 import * as Styles from "./assets/productStyles.scss";
 import test from './assets/test.png'
 import { IProductProps } from "./entities";
 
 export default function Product(props: IProductProps) {
 
+    /**
+     * If clicked, adding current product
+     * to basket
+     */
     function addToBasket() {
         props.addToBasket(props);
     }

@@ -1,5 +1,6 @@
 declare namespace FilterStylesScssNamespace {
   export interface IFilterStylesScss {
+    brandsFilter: string;
     container: string;
     filter: string;
     filterContainer: string;

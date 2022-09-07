@@ -6,7 +6,8 @@ import { IHeaderActionProps, IHeaderProps } from "./entities";
 
 const mapStateToProps = function (state: BaseState): IHeaderProps {
     return {
-        filterDrawer: state.filterDrawer
+        filterDrawer: state.filterDrawer,
+        basket: state.basket,
     }
 }
 

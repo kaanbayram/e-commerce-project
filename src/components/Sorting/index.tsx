@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import type { RadioChangeEvent } from 'antd';
-import { Input, Radio, Space } from 'antd';
+import { Radio, Space } from 'antd';
 import * as Styles from './assets/sortingStyles.scss';
+import { SortingType } from "../../entities";
+import { ISortingProps } from "./entities";
 
-export default function Sorting() {
-    const [value, setValue] = useState(1);
+export default function Sorting(props: ISortingProps) {
 
-    const onChange = (e: RadioChangeEvent) => {
-        console.log('radio checked', e.target.value);
-        setValue(e.target.value);
+    function onChange(e: RadioChangeEvent) {
+        props.onChange(e.target.value);
+
     };
 
     return (
         <div className={Styles.sortingContainer}>
-            <Radio.Group onChange={onChange} value={value} >
+            <Radio.Group onChange={onChange} value={props.sortingType}>
                 <Space direction="vertical">
-                    <Radio value={1}>Price low to high</Radio>
-                    <Radio value={2}>Price high to low</Radio>
-                    <Radio value={3}>New to old</Radio>
-                    <Radio value={4}>Old to new</Radio>
+                    <Radio value={SortingType.PriceHTL}>Price high to low</Radio>
+                    <Radio value={SortingType.PriceLTH}>Price low to high</Radio>
+                    <Radio value={SortingType.NTO}>New to old</Radio>
+                    <Radio value={SortingType.OTN}>Old to new</Radio>
                 </Space>
             </Radio.Group>
         </div>

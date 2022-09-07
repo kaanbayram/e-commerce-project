@@ -1,8 +1,7 @@
 import { Drawer } from "antd";
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
 import { Basket, Filters, Products } from "../";
-import { IBasketItem } from "../../common";
+import { getPrices } from "../../common";
 import * as Styles from './assets/contentStyles.scss'
 import { IContentActionProps, IContentProps } from "./entities";
 
@@ -24,16 +23,10 @@ export function Content(props: IContentProps & IContentActionProps) {
         props.changeBasketDrawerStatus(false);
     }
 
-    function getPrices() {
-        if (props.basket) {
-            return JSON.parse(props.basket)
-                .map((item: IBasketItem) => (item.count as number) * item.price)
-                ?.reduce((result: any, item: IBasketItem) => result + item)
-                ?.toFixed(2);
-        }
-        return 0;
-    }
-
+    /**
+     * Drawer for small or medium screens
+     * @returns Returning drawer
+     */
     function filterDrawer() {
         return (
             <>
@@ -54,6 +47,10 @@ export function Content(props: IContentProps & IContentActionProps) {
         );
     }
 
+    /**
+     * Drawer for small or medium screens
+     * @returns Returning drawer
+     */
     function basketDrawer() {
         return (
             <>
@@ -67,7 +64,7 @@ export function Content(props: IContentProps & IContentActionProps) {
                     visible={props.basketDrawer}
                 >
                     <div className={Styles.drawerContainer}>
-                        <Basket prices={getPrices()} />
+                        <Basket prices={getPrices(props.basket)} />
                     </div>
                 </Drawer>
             </>
@@ -87,7 +84,7 @@ export function Content(props: IContentProps & IContentActionProps) {
                     <Products />
                 </div>
                 <div className={Styles.column}>
-                    <Basket prices={getPrices()} />
+                    <Basket prices={getPrices(props.basket)} />
                 </div>
 
             </div>

@@ -7,7 +7,6 @@ Tech Stack, Libraries etc.
 * Sass (Also used as a module in Components)
 * Antdesign
 * Immutable.js (used in store)
-* Node.js
 
 Because of the size of datas, I couldn' t load them to my typicode server.
 Becase typicode only allow 10Kb size of file. But still, to fetch datas from the

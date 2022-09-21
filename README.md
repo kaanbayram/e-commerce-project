@@ -22,6 +22,7 @@ heroku run "heroku-postbuild" automatically and created a dist file
 in server after installed packages, and returned html file from server.js
 
 https://getir-assignment-app-server.herokuapp.com/api/products
+
 https://getir-assignment-frontend.herokuapp.com/
 
 

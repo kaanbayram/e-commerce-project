@@ -10,7 +10,7 @@ Tech Stack, Libraries etc.
 
 Because of the size of datas, I couldn' t load them to my typicode server.
 Becase typicode only allow 10Kb size of file. But still, to fetch datas from the
-server, I created a tiny backend with node.js to fetch companies and products data (https://getir-assignment-app-server.com/api/products)
+server, I created a tiny backend with node.js to fetch companies and products data (https://getir-assignment-app-server.herokuapp.com/api/products)
 
 I used Scss and Tailwind togetger. And to prevent ugly view
 of HTML elements with crowded class names I used "@teamsupercell/typings-for-css-modules-loader"
